@@ -48,8 +48,7 @@ var makePhrase = function(object){
 
 var tweetIt = function(object){//this function sends out the tweet
 		var tweetContent = {status: makePhrase(object) + " @Starbucks @TheRealPSL #trpsl #psl #peoplesharelove"}
-		console.log(tweetContent);
-		// T.post('statuses/update', tweetContent, tweeted);
+		T.post('statuses/update', tweetContent, tweeted);
 };
 
 var replies = function(object){
@@ -58,8 +57,7 @@ var replies = function(object){
 	function replied(event){
 		var screenName = event.user.screen_name;
 		var replyContent = {status: makePhrase(object) + "? @" + screenName + " #trpsl #psl #peoplesharelove"};
-		console.log(replyContent);
-		// T.post('statuses/update', replyContent, tweeted);
+		T.post('statuses/update', replyContent, tweeted);
 	};
 };
 
