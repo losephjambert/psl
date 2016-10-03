@@ -1,9 +1,4 @@
 /*===========================================================
-Confirmation message to let us know our server is working
-===========================================================*/
-console.log("Hello Dave");
-
-/*===========================================================
 Require local modules and declare global varz
 ===========================================================*/
 var Twit = require('twit');
@@ -17,12 +12,7 @@ var timeNow = function() {
   var d = new Date(),
       h = (d.getHours()<10?'0':'') + d.getHours(),
       m = (d.getMinutes()<10?'0':'') + d.getMinutes();
-  // return h + ':' + m;
   return h+m;
-  // console.log(h + m);
-}
-if (timeNow() >= 700 && timeNow() <= 1800 ){
-console.log("the current time is " + timeNow());
 }
 /*===========================================================
 Magic Javascript Island ----> Ignite!
