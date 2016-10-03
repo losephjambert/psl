@@ -1,0 +1,33 @@
+{
+  "name": "pumpkin_spice_latte",
+  "version": "1.0.0",
+  "description": "A bot to tweet about PSL",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/losephjambert/psl.git"
+  },
+  "keywords": [
+    "pumpkin",
+    "spice",
+    "latte"
+  ],
+  "author": "Joseph Lambert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/losephjambert/psl/issues"
+  },
+  "homepage": "https://github.com/losephjambert/psl#readme",
+  "dependencies": {
+    "ajax-request": "^1.2.1",
+    "body": "^5.1.0",
+    "google-spreadsheet": "^2.0.3",
+    "google-spreadsheet-to-json": "^0.3.0",
+    "simple-ajax": "^2.6.0",
+    "twit": "^2.2.5"
+  }
+}
