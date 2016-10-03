@@ -17,7 +17,7 @@ var timeNow = function() {
 /*===========================================================
 Magic Javascript Island ----> Ignite!
 ===========================================================*/
-var time = 10000;
+var time = 1000*60*30;
 var tweeted = function(err, data, response){
 	if (err){console.log("I was unable to tweet" + err);}
 	else{console.log("I tweeted, with glory.");}};
