@@ -17,7 +17,7 @@ var timeNow = function() {
 /*===========================================================
 Magic Javascript Island ----> Ignite!
 ===========================================================*/
-var time = 1000*60*30;
+var time = 10000;
 var tweeted = function(err, data, response){
 	if (err){console.log("I was unable to tweet" + err);}
 	else{console.log("I tweeted, with glory.");}};
@@ -37,7 +37,7 @@ var makePhrase = function(object){
 };
 
 var tweetIt = function(object){//this function sends out the tweet
-		var tweetContent = {status: makePhrase(object) + " @Starbucks @TheRealPSL #trpsl #psl #peoplesharelove"}
+		var tweetContent = {status: makePhrase(object) + " @Starbucks @TheRealPSL #trpsl #psl #peoplesharelove"};
 		T.post('statuses/update', tweetContent, tweeted);
 };
 
