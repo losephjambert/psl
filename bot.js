@@ -1,3 +1,5 @@
+//More in depth question at the bottom of the file
+
 /*===========================================================
 Confirmation message to let us know our server is working
 ===========================================================*/
@@ -23,8 +25,8 @@ var timeNow = function() {
 /*===========================================================
 Bot run functions
 ===========================================================*/
-//global time var
-var time = 1000*60*30;
+//global time var to control the tweetIt interval. currently set to every half hour
+var time = 100*60*30;
 
 //global error and success function for twitter api call
 var tweeted = function(err, data, response){
@@ -72,3 +74,15 @@ replies(pslObj);
 if (timeNow() >= 700 && timeNow() <= 1800 ){
 	setInterval( function() {tweetIt(pslObj);}, time );
 }
+
+
+
+/*
+My big question here is how could I have been more efficient in my execution of this?
+I have two different processes going on here. One function—tweetIt();—to tweet every
+half hour, and another function—replies();—to tweet when someone mentions the account.
+They both use makePhrase(); to generate the tweet content, but I have to call the functions
+at the end of the code. I've seen in a lot of js examples, folks will call functions at
+the top of their code, but when I do that with replies();, node throws an error stating
+that `replies(); is not a function`.
+*/
