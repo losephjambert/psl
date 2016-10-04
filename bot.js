@@ -17,21 +17,21 @@ var timeNow = function() {
   var d = new Date(),
       h = (d.getHours()<10?'0':'') + d.getHours(),
       m = (d.getMinutes()<10?'0':'') + d.getMinutes();
-  // return h + ':' + m;
   return h+m;
-  // console.log(h + m);
 }
-if (timeNow() >= 700 && timeNow() <= 1800 ){
-console.log("the current time is " + timeNow());
-}
+
 /*===========================================================
-Magic Javascript Island ----> Ignite!
+Bot run functions
 ===========================================================*/
+//global time var
 var time = 1000*60*30;
+
+//global error and success function for twitter api call
 var tweeted = function(err, data, response){
 	if (err){console.log("I was unable to tweet" + err);}
 	else{console.log("I tweeted, with glory.");}};
 
+//function to make a three-word phrase from the psl-object.js file
 var makePhrase = function(object){
 	newArray = [];
 	for (key in object){
@@ -46,12 +46,14 @@ var makePhrase = function(object){
 	}
 };
 
+//function to make a standard tweet
 var tweetIt = function(object){//this function sends out the tweet
 		var tweetContent = {status: makePhrase(object) + " @Starbucks @TheRealPSL #trpsl #psl #peoplesharelove"}
 		console.log(tweetContent);
 		// T.post('statuses/update', tweetContent, tweeted);
 };
 
+//function to reply with a tweet when account is mentioned
 var replies = function(object){
 	var stream = T.stream('statuses/filter', { track: '@TheRealestPSL' });
 	stream.on('tweet', replied);
@@ -63,7 +65,10 @@ var replies = function(object){
 	};
 };
 
+//initiate the reply function
 replies(pslObj);
+
+//set an interval between specific hours of the day for efficient tweeting
 if (timeNow() >= 700 && timeNow() <= 1800 ){
 	setInterval( function() {tweetIt(pslObj);}, time );
 }
