@@ -1,1 +1,1 @@
-worker: node bot.js
+orker: node bot.js
